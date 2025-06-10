@@ -1,7 +1,6 @@
 # buzzlabs-phase-1
 
-A [re-frame](https://github.com/day8/re-frame) application designed to ... well, that part is up to
-you.
+A [re-frame](https://github.com/day8/re-frame) application counter.
 
 ## Getting Started
 
