@@ -1,8 +1,7 @@
 (ns buzzlabs-phase-1.events
   (:require
    [re-frame.core :as re-frame]
-   [buzzlabs-phase-1.db :as db]
-   ))
+   [buzzlabs-phase-1.db :as db]))
 
 (re-frame/reg-event-db
  ::initialize-db
@@ -11,15 +10,15 @@
 
 
 (defn set-count
-  "Set the counter value based on function (inc or dec)"
+  "Set the counter value based on function (inc , dec or reset)"
   [db func]
   (update db
-         :count func))
+          :count func))
+
 
 
 (re-frame/reg-event-fx
  ::set-counter
  (fn [{:keys [db]} [_ func]]
    {:db (-> db
-            (set-count func)
-            )}))
+            (set-count func))}))
