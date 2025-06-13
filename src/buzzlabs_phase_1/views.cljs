@@ -29,10 +29,10 @@
   []
   (let [count (re-frame/subscribe [::subs/count])]
     [:div {:style (:container styles)}
-     [:button  {:on-click (fn [] (re-frame/dispatch [::events/set-counter inc])) 
+     [:button  {:on-click (fn [] (re-frame/dispatch [::events/set-counter inc @count])) 
                 :style (:button styles)} "+"]
      [:p {:style (:counter styles)} @count ]
-     [:button  {:on-click (fn [] (re-frame/dispatch [::events/set-counter dec]))
+     [:button  {:on-click (fn [] (re-frame/dispatch [::events/set-counter dec @count]))
                 :disabled (= @count 0) 
                 :style (:button styles)} "-"]
      ]))
@@ -41,7 +41,7 @@
   "Button to reset the counter value"
   []
   [:div 
-   [:button  {:on-click (fn [] (re-frame/dispatch [::events/set-counter (fn[] 0)]))
+   [:button  {:on-click (fn [] (re-frame/dispatch [::events/set-counter (fn[] 0) 0]))
              :style (:reset styles)} "Reset" ]])
 
 

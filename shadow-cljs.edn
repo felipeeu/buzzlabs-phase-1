@@ -1,13 +1,9 @@
 {:nrepl {:port 8777}
-
- 
-
  :source-paths ["src" "test"]
-
  :dependencies
  [[reagent "1.2.0"]
   [re-frame "1.4.3"]
-
+  [day8.re-frame/http-fx "0.2.4"]
   [binaryage/devtools "1.0.6"]]
 
  :dev-http
